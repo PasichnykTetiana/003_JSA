@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<input type="button" onclick="Start()" value="Старт">
+<input type="button" onclick="Stop()" value="Стоп">
+<input type="button" onclick="Reset()" value="Сбросить">
+<p id="par">секундомер
+</p>
+<script>
+    //Разработайте программу секундомер. Секундомер должен иметь три кнопки «Старт», «Стоп», «Сбросить». Секундомер должен выводить
+    //время в формате 00:00:00.
+    let
+        calc=document.getElementById("par"),
+        interval,
+        c=0,
+        a=0,
+        b=0,
+        z="0";
+
+    function Start(){
+        /* let c=0,
+         a=0,
+         b=0,
+         z="0";*/
+        function Count(){
+            let  zc=z+c,
+                zb=z+b;
+            za=z+a;
+            if (b>9){
+                zb=b;
+            }
+            if (c>9){
+                zc=c;
+            }
+            if (a>9){
+                za=a;
+            }
+            c++
+            calc.innerHTML = za + ":" + zb + ":" + zc;
+            if(c===59){
+                c=0
+                b++
+            }
+            if(b===59){
+                b=0
+                a++
+            }
+        }
+        interval=setInterval(Count, 10);
+    }
+    function Stop(){
+
+        clearInterval(interval);
+
+    }
+    function Reset(){
+        let  zc="00",
+            zb="00";
+        za="00";
+        calc.innerHTML = za + ":" + zb + ":" + zc;
+    }
+
+</script>
+
+</body>
+</html>
