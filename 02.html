@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<a href="MY.html?a=100&b=200">Cсылка</a><br>
+<input type="button" name="name" value="Результат" onclick="print()"><br>
+<b id="sum">Сумма</b>
+<script>
+    //Разработайте страницу, которая будет выводить сумму двух GET параметров a и b. Например, если на страницу заходят по адресу,
+    //page.html?a=100&b=200, то в теле страницы должно отображаться сообщение «сумма 300».
+
+    let c=0,
+        p=document.getElementById("sum");
+    function print(){
+        let a=location.search.substring(3,6),
+            b=location.search.substring(9,12),
+            c=Number(a)+Number(b);
+        console.log(c);
+        p.innerHTML = c;
+
+    }
+
+</script>
+
+</body>
+</html>
