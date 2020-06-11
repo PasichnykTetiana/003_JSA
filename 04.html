@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<!--Создайте страницу с тремя ссылками: «JS Урок 1», «JS Урок 2», «JS Урок 3». При нажатии по каждой из
+ссылок должно отображаться окно с описанием соответствующих уроков этого курса. Если окно с
+описание в данный момент отображается, текст ссылки должен быть «JS Урок № (открыт)». При
+повторном нажатии на ссылку окно должно исчезать и текст ссылки должен меняться на исходный.-->
+<a id="JS1">JS Урок 1</a><br>
+<a id="JS2">JS Урок 2</a><br>
+<a id="JS3">JS Урок 3</a>
+<script>
+    //почему мой пример работает только если у тега id?
+   document.getElementById("JS1").onclick=OBH;
+   document.getElementById("JS2").onclick=OBH;
+   document.getElementById("JS3").onclick=OBH;
+   let w;
+   console.log(document.querySelectorAll("a").innerHTML);
+   JSO = document.getElementById("JS1");
+  function OBH() {
+      let x=this.innerHTML,
+          b;
+      b=x.match(/[0-9]/);
+      console.log(x.match(/[0-9]/));
+       w=window.open("03.html", "J", "width=400,height=400,status=yes,resizable=no");
+       this.innerHTML = "JS Урок № (открыт)";
+       this.onclick=OOO;
+       function OOO() {
+           this.innerHTML = "JS Урок "+b;
+       }
+   }
+
+
+
+</script>
+</body>
+</html>
