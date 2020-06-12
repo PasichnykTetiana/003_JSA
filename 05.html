@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<!--<b id="sum" style="position: relative;">Сумма</b> -->
+<form>
+    <p id="text" style="position: relative;">Введите:</p><br>
+    <input id="str" style="position: relative;">
+    <p><input type="button" value="Отправить" onclick="S()">
+</form>
+<script>
+//Создайте бегущую строку. Пользователь вводит текст в поле ввода и нажимает на кнопку. После чего в элементе страниц отображается бегущая
+//строка с введенным текстом.
+
+let e, c,
+leftpos=0,
+interval,
+pos;
+
+   function S() {
+       
+            e = document.getElementById("text");
+            c = document.getElementById("str").value;
+            e.innerHTML=c;
+            clearInterval(interval);
+            interval = setInterval(animate, 10);
+            
+        }
+        function animate() {
+            
+            if(leftpos>=100){
+                leftpos=0;
+            }else 
+            e.style.left = leftpos + "vh";
+            leftpos +=0.2;
+            console.log(pos)
+        }
+
+</script>
+
+</body>
+</html>
