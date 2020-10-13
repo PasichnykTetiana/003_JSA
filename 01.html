@@ -52,6 +52,9 @@
                 b=0
                 a++
             }
+            if(a===59){
+                clearInterval(interval);
+            }
         }
         interval=setInterval(Count, 10);
     }
@@ -61,6 +64,7 @@
 
     }
     function Reset(){
+        clearTimeout(interval)
         let  zc="00",
             zb="00";
         za="00";
